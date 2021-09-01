@@ -6,6 +6,10 @@ body{
  background-color: #494673;
 }
 
+#spinner{
+    display: none;
+}
+
 #result-total{
     display: none;
 }

@@ -1,9 +1,21 @@
+// Spinner
+const toggleSpinner = displayStyle => {
+    document.getElementById('spinner').style.display = displayStyle;
+}
+
+// Result Total
+const toggleResult = displayStyle => {
+    document.getElementById('result-total').style.display = displayStyle;
+}
+
+
 // Fetch result
 const getResult = () => {
     // Get user input
     const searchTextField = document.getElementById('search-text')
     const searchText = searchTextField.value
-
+    toggleResult('none')
+    toggleSpinner('block');
     // Clear user input
     searchTextField.value = ''
 
@@ -15,6 +27,7 @@ const getResult = () => {
         .then(respose => respose.json())
         .then(data => showResult(data))
 }
+
 
 // Show Result
 const showResult = data => {
@@ -28,7 +41,8 @@ const showResult = data => {
     else {
         count.innerText = "No"
     }
-    resultTotal.style.display = "block"
+    toggleSpinner('none')
+    toggleResult('block')
 
     // Show Result
     const searchResultDiv = document.getElementById('search-results')
