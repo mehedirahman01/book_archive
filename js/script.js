@@ -3,11 +3,6 @@ const toggleSpinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
 
-// Result Total
-const toggleResult = displayStyle => {
-    document.getElementById('result-total').style.display = displayStyle;
-}
-
 
 // Fetch result
 const getResult = () => {
@@ -26,6 +21,12 @@ const getResult = () => {
     fetch(url)
         .then(respose => respose.json())
         .then(data => showResult(data))
+}
+
+
+// Result Total
+const toggleResult = displayStyle => {
+    document.getElementById('result-total').style.display = displayStyle;
 }
 
 
